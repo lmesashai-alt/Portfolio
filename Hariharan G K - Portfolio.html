@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharan G K | Creative Video & Graphic Designer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Base styles and fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f9fafb;
+            transition: background-color 0.5s ease;
+        }
+
+        .dark body {
+            background-color: #030712;
+        }
+
+        .dark {
+            color-scheme: dark;
+        }
+
+        /* Utility class for icon components */
+        .icon {
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            line-height: 1;
+        }
+        
+        /* Custom animations */
+        .page-transition {
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ensure main content handles scroll */
+        #main-content {
+            overflow-y: auto;
+            height: 100vh;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Dynamic primary color utility classes are generated in JS based on SITE_CONFIG.theme.primaryColor */
+    </style>
+</head>
+
+<body class="text-base">
+
+    <!-- Configuration Object (JS) -->
+    <script>
+        const SITE_CONFIG = {
+            // 1. Branding and Identity
+            name: "Hariharan G K",
+            title: "Creative Video & Graphic Designer | Motion Graphics & VFX Artist",
+            specialization: "Crafting impactful visual stories through Motion Graphics, VFX, and 2D Animation.",
+            email: "contact@hariharangk.com",
+            socials: [
+                { name: "Behance", icon: "Aperture", url: "https://www.behance.net/hariharangk1", color: "text-blue-600 hover:text-blue-400" },
+                { name: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/in/hariharan-g-1b3077201?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", color: "text-blue-700 hover:text-blue-500" },
+                { name: "Instagram", icon: "Instagram", url: "https://www.instagram.com/hariharan__gk?igsh=MXJ6ZWVsMW92Z2VxbA==", color: "text-pink-600 hover:text-pink-400" },
+                { name: "Twitter", icon: "Twitter", url: "#", color: "text-sky-500 hover:text-sky-300" },
+            ],
+
+            // 2. Theming and Design Control - CUSTOMIZATION POINT
+            theme: {
+                // PRIMARY COLOR (For all accent text, buttons, and skill bars)
+                // Use a valid Tailwind CSS color name (e.g., 'blue', 'indigo', 'rose', 'teal', 'emerald', 'amber').
+                primaryColor: "cyan", 
+                
+                // GRADIENT COLORS (Used for background decorative shapes on the Home page)
+                gradient: {
+                    angle: "135deg", // Angle of the gradient
+                    // Hex codes for the gradient stops:
+                    color1: "#06b6d4", // Default: A medium Cyan
+                    color2: "#34d399", // Default: A light Emerald/Teal
+                    color3: "#67e8f9", // Default: A light Sky Blue
+                }
+            },
+
+            // 3. Project Data (UPDATED TITLES)
+            projects: [
+                {
+                    id: 1,
+                    title: "SHORTS / REELS VIDEO",
+                    category: "Social Media / Editing",
+                    tools: ["Premiere Pro", "After Effects", "CapCut"],
+                    description: "High-retention short-form content designed for Instagram Reels and YouTube Shorts, focusing on pacing and engagement.",
+                    thumbnailPlaceholder: "https://placehold.co/400x300/e0f2f7/065f46?text=Shorts+%26+Reels",
+                    behanceLink: "https://www.behance.net/gallery/123456789/Project-1-Shorts"
+                },
+                {
+                    id: 2,
+                    title: "GREEN SCREEN VFX",
+                    category: "VFX / Compositing",
+                    tools: ["After Effects", "Keylight", "Mocha"],
+                    description: "Seamless chroma keying and compositing to transport subjects into entirely new digital environments with realistic lighting.",
+                    thumbnailPlaceholder: "https://placehold.co/400x300/e0f2f7/065f46?text=Green+Screen+VFX",
+                    behanceLink: "https://www.behance.net/gallery/123456790/Project-2-VFX"
+                },
+                {
+                    id: 3,
+                    title: "ANIMATION",
+                    category: "Motion Design",
+                    tools: ["After Effects", "Illustrator"],
+                    description: "Expressive 2D character animation and motion graphics that bring static illustrations to life for brand storytelling.",
+                    thumbnailPlaceholder: "https://placehold.co/400x300/e0f2f7/065f46?text=Animation",
+                    behanceLink: "https://www.behance.net/gallery/123456791/Project-3-Animation"
+                },
+                {
+                    id: 4,
+                    title: "AI GENERATED VIDEO",
+                    category: "Generative AI",
+                    tools: ["Midjourney", "Runway Gen-2", "Premiere"],
+                    description: "Exploring the frontier of content creation by blending traditional editing with AI-synthesized visuals and textures.",
+                    thumbnailPlaceholder: "https://placehold.co/400x300/e0f2f7/065f46?text=AI+Generated+Video",
+                    behanceLink: "https://www.behance.net/gallery/123456792/Project-4-AI"
+                },
+            ],
+
+            // 4. About Section Content
+            about: {
+                bio: "With over 5 years of professional experience, I am a dedicated Creative Video & Graphic Designer who thrives on transforming abstract concepts into compelling visual narratives. My expertise lies in the technical precision of Motion Graphics, the artistic flair of VFX, and the strategic planning of social media content. My vision is simple: deliver high-impact, flawlessly executed visual solutions that drive engagement and tell a memorable story.",
+                skills: [
+                    { name: "Adobe After Effects", level: 95 },
+                    { name: "Adobe Photoshop", level: 90 },
+                    { name: "Adobe Illustrator", level: 85 },
+                    { name: "Premiere Pro", level: 88 },
+                    { name: "VFX Editing / Compositing", level: 82 },
+                    { name: "2D Animation", level: 90 },
+                    { name: "Social Media Content", level: 93 },
+                ],
+                softwareList: [
+                    "Adobe Creative Suite (Master)", "Cinema 4D (Basic)", "Blender (Learning)", "DaVinci Resolve",
+                ]
+            },
+        };
+
+        // Initialize variables based on config
+        const primaryColor = SITE_CONFIG.theme.primaryColor;
+        const behanceUrl = SITE_CONFIG.socials.find(s => s.name === 'Behance').url;
+        
+    </script>
+
+    <div id="app-container" class="flex flex-col min-h-screen">
+        <!-- Header/Navbar -->
+        <header id="header" class="sticky top-0 z-40 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg transition-all duration-300">
+            <div class="max-w-7xl mx-auto flex justify-between items-center h-20 px-4">
+                <h1 class="text-2xl font-black tracking-tight text-gray-900 dark:text-white">
+                    Hariharan.<span class="text-${primaryColor}-600">GK</span>
+                </h1>
+                
+                <!-- Desktop & Mobile Navigation -->
+                <nav id="navigation" class="fixed inset-x-0 bottom-0 md:static bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-2xl md:shadow-none z-50 transition-all duration-300 border-t md:border-t-0 border-gray-200 dark:border-gray-800">
+                    <div class="flex justify-around md:justify-end items-center px-4 py-2 md:py-0 space-x-2 md:space-x-4 md:h-20 max-w-7xl mx-auto">
+                        <!-- Navigation Links will be injected here by JS -->
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+            <div id="page-content" class="page-transition min-h-[calc(100vh-140px)]">
+                <!-- Page content (Home, About, Portfolio, Contact) will be rendered here -->
+            </div>
+            
+            <!-- Footer -->
+            <footer class="w-full border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+                © <span id="current-year"></span> Hariharan G K. All Rights Reserved. Coded with <span class="icon inline-block mx-1 w-4 h-4" data-lucide="zap"></span>
+            </footer>
+        </main>
+
+        <!-- Scroll To Top Button -->
+        <button id="scroll-to-top" onclick="scrollTop()" class="fixed bottom-24 md:bottom-8 right-4 md:right-8 p-3 rounded-full bg-${primaryColor}-600 text-white shadow-xl hover:bg-${primaryColor}-700 transition-all duration-300 z-50 opacity-0 translate-y-4 pointer-events-none" aria-label="Scroll to top">
+            <span class="icon w-6 h-6" data-lucide="arrow-up"></span>
+        </button>
+    </div>
+
+    <script>
+        // --- JAVASCRIPT LOGIC ---
+
+        const APP = {
+            init() {
+                this.setupTheme();
+                this.renderNavigation();
+                this.setupRouting();
+                this.setupScrollToTop();
+                this.updateFooterYear();
+            },
+
+            // Theme Management (Dark Mode)
+            setupTheme() {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                }
+            },
+
+            toggleDarkMode() {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                this.renderNavigation(); // Re-render to update the icon
+                lucide.createIcons();
+            },
+
+            // Utility for rendering Lucide icons
+            getIconHtml(name, classes = 'w-5 h-5') {
+                return `<span class="icon ${classes}" data-lucide="${name}"></span>`;
+            },
+
+            // Navigation Rendering
+            renderNavigation(currentView = window.location.hash.substring(1) || 'home') {
+                const links = [
+                    { name: "Home", view: "home", icon: "Aperture" },
+                    { name: "About", view: "about", icon: "User" },
+                    { name: "Portfolio", view: "portfolio", icon: "Briefcase" },
+                    { name: "Contact", view: "contact", icon: "Mail" },
+                ];
+                const navContainer = document.querySelector('#navigation > div');
+                const isDark = document.documentElement.classList.contains('dark');
+                const themeIcon = isDark ? 'sun' : 'moon';
+
+                navContainer.innerHTML = links.map(({ name, view, icon }) => {
+                    const isActive = currentView === view;
+                    // Use dynamic classes based on primaryColor
+                    const activeClasses = `text-${primaryColor}-600 dark:text-${primaryColor}-400 font-extrabold border-b-4 border-${primaryColor}-500`;
+                    const baseClasses = `flex flex-col items-center md:flex-row md:space-x-1 p-2 md:px-4 md:py-2 rounded-xl text-sm transition-all duration-300 transform hover:scale-105`;
+
+                    return `
+                        <button
+                            key="${view}"
+                            onclick="APP.navigate('${view}')"
+                            class="${baseClasses} ${isActive ? activeClasses : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}"
+                            aria-current="${isActive ? 'page' : 'false'}"
+                        >
+                            ${this.getIconHtml(icon, 'w-5 h-5 md:w-5 md:h-5 mb-0.5 md:mb-0')}
+                            <span class="text-xs md:text-sm">${name}</span>
+                        </button>
+                    `;
+                }).join('') + `
+                    <button
+                        onclick="APP.toggleDarkMode()"
+                        class="p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 ml-4 hidden md:block"
+                        aria-label="Switch Theme"
+                    >
+                        ${this.getIconHtml(themeIcon, 'w-6 h-6')}
+                    </button>
+                `;
+                lucide.createIcons();
+            },
+
+            // Routing
+            setupRouting() {
+                const handleHashChange = () => {
+                    const hash = window.location.hash.substring(1) || 'home';
+                    this.renderPage(hash);
+                    this.renderNavigation(hash);
+                };
+
+                window.addEventListener('hashchange', handleHashChange);
+                handleHashChange(); // Initial load
+            },
+
+            navigate(view) {
+                window.location.hash = view;
+                const mainContent = document.getElementById('main-content');
+                if (mainContent) {
+                    mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            },
+
+            // Page Rendering
+            renderPage(view) {
+                const pageContent = document.getElementById('page-content');
+                let html = '';
+
+                switch (view) {
+                    case 'about':
+                        html = this.renderAboutPage();
+                        break;
+                    case 'portfolio':
+                        html = this.renderPortfolioPage();
+                        break;
+                    case 'contact':
+                        html = this.renderContactPage();
+                        break;
+                    case 'home':
+                    default:
+                        html = this.renderHomePage();
+                        break;
+                }
+                pageContent.innerHTML = html;
+                lucide.createIcons();
+                // Re-attach event listeners for dynamic content (like the contact form)
+                if (view === 'contact') {
+                    document.getElementById('contact-form').addEventListener('submit', this.handleContactSubmit);
+                }
+            },
+
+            // --- PAGE TEMPLATES ---
+
+            renderButton(text, onClick, variant = 'primary', iconName = '', className = '') {
+                const baseClasses = `px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg ${className}`;
+                let colorClasses = '';
+
+                if (variant === 'primary') {
+                    // Dynamic Primary Button Classes
+                    colorClasses = `bg-${primaryColor}-600 text-white hover:bg-${primaryColor}-700 dark:bg-${primaryColor}-500 dark:hover:bg-${primaryColor}-600 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-${primaryColor}-500/50`;
+                } else if (variant === 'secondary') {
+                    // Dynamic Secondary Button Classes
+                    colorClasses = `bg-white dark:bg-gray-800 border border-${primaryColor}-500 text-${primaryColor}-600 dark:text-${primaryColor}-400 hover:bg-${primaryColor}-50 dark:hover:bg-gray-700 transform hover:scale-[1.03]`;
+                }
+                
+                const iconHtml = iconName ? this.getIconHtml(iconName, 'w-5 h-5 ml-2') : '';
+
+                return `
+                    <button onclick="${onClick}" class="${baseClasses} ${colorClasses}">
+                        <div class="flex items-center">
+                            ${text} ${iconHtml}
+                        </div>
+                    </button>
+                `;
+            },
+            
+            renderSocialIcon(link) {
+                // Social media icons retain their specific brand colors
+                return `
+                    <a
+                        href="${link.url}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="p-3 rounded-full border border-gray-300 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-md transition-all duration-300 ${link.color} hover:scale-110 hover:shadow-lg hover:shadow-${primaryColor}-500/30"
+                        aria-label="${link.name}"
+                    >
+                        ${this.getIconHtml(link.icon, 'w-6 h-6')}
+                    </a>
+                `;
+            },
+
+            renderHomePage() {
+                const { name, title, specialization, theme, socials } = SITE_CONFIG;
+                // Dynamically build the gradient style
+                const backgroundShapeStyle = `background: linear-gradient(${theme.gradient.angle}, ${theme.gradient.color1}, ${theme.gradient.color2}); filter: blur(100px);`;
+
+                return `
+                    <div id="home" class="relative min-h-screen flex items-center justify-center p-4 pt-24 md:pt-0 overflow-hidden bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+                        <div
+                            class="absolute top-0 right-0 w-80 h-80 md:w-1/2 md:h-1/2 rounded-full opacity-30 dark:opacity-20 transform -translate-y-1/2 translate-x-1/2 transition-opacity duration-1000"
+                            style="${backgroundShapeStyle}"
+                        ></div>
+                        <div
+                            class="absolute bottom-0 left-0 w-60 h-60 md:w-1/3 md:h-1/3 rounded-full opacity-30 dark:opacity-20 transform translate-y-1/2 -translate-x-1/2 transition-opacity duration-1000"
+                            style="${backgroundShapeStyle}"
+                        ></div>
+
+                        <div class="relative text-center max-w-5xl z-10 p-6">
+                            <p class="text-lg sm:text-xl font-semibold mb-3 tracking-widest uppercase text-${primaryColor}-600 dark:text-${primaryColor}-400 animate-fade-in-down">
+                                ${name}
+                            </p>
+                            <h1 class="text-5xl sm:text-7xl md:text-8xl font-black mb-4 leading-tight tracking-tighter text-gray-900 dark:text-white page-transition">
+                                <span class="text-${primaryColor}-600 dark:text-${primaryColor}-400">Vision</span> into Motion.
+                            </h1>
+                            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium mb-10 text-gray-700 dark:text-gray-300 page-transition" style="animation-delay: 0.1s;">
+                                ${title}
+                            </h2>
+                            <p class="text-lg md:text-xl font-light italic mb-12 max-w-3xl mx-auto text-gray-600 dark:text-gray-400 page-transition" style="animation-delay: 0.2s;">
+                                ${specialization}
+                            </p>
+
+                            <div class="flex justify-center space-x-4 mb-12 page-transition" style="animation-delay: 0.3s;">
+                                ${this.renderButton('View Work', `APP.navigate('portfolio')`, 'primary', 'Briefcase')}
+                                ${this.renderButton('Contact Me', `APP.navigate('contact')`, 'secondary', 'Mail')}
+                            </div>
+
+                            <div class="flex justify-center space-x-6 page-transition" style="animation-delay: 0.4s;">
+                                ${socials.map(link => this.renderSocialIcon(link)).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+
+            renderAboutPage() {
+                const { about } = SITE_CONFIG;
+
+                return `
+                    <div id="about" class="py-16 md:py-24 max-w-7xl mx-auto px-4">
+                        <header class="text-center mb-16">
+                            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
+                                My Creative Journey
+                            </h2>
+                            <p class="text-xl font-light text-${primaryColor}-600 dark:text-${primaryColor}-400">
+                                Experience, Vision, and Expertise
+                            </p>
+                        </header>
+
+                        <div class="grid lg:grid-cols-3 gap-12">
+                            <div class="lg:col-span-2">
+                                <section class="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-3xl shadow-2xl mb-12 border border-gray-100 dark:border-gray-700">
+                                    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                                        ${this.getIconHtml('User', 'w-6 h-6 mr-3 text-${primaryColor}-600')}
+                                        Creative Designer Bio
+                                    </h3>
+                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                                        ${about.bio}
+                                    </p>
+                                </section>
+
+                                <section class="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700">
+                                    <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                                        ${this.getIconHtml('Code', 'w-6 h-6 mr-3 text-${primaryColor}-600')}
+                                        Software & Tools Mastery
+                                    </h3>
+                                    <div class="flex flex-wrap gap-4">
+                                        ${about.softwareList.map(tool => `
+                                            <span class="text-sm font-semibold bg-${primaryColor}-100 dark:bg-${primaryColor}-900/50 text-${primaryColor}-800 dark:text-${primaryColor}-300 px-5 py-2 rounded-xl shadow-md transition-transform hover:scale-105">
+                                                ${tool}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                </section>
+                            </div>
+
+                            <aside class="lg:col-span-1">
+                                <div class="sticky top-20 bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700">
+                                    <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                                        Core Skills
+                                    </h3>
+                                    ${about.skills.map(skill => `
+                                        <div class="mb-6">
+                                            <div class="flex justify-between items-center mb-2">
+                                                <span class="text-sm font-medium text-gray-800 dark:text-gray-200">${skill.name}</span>
+                                                <span class="text-xs font-bold text-${primaryColor}-600 dark:text-${primaryColor}-400">${skill.level}%</span>
+                                            </div>
+                                            <div class="w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700">
+                                                <div
+                                                    class="h-3 rounded-full bg-${primaryColor}-600 transition-all duration-1000 ease-out"
+                                                    style="width: ${skill.level}%"
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                `;
+            },
+
+            renderProjectCard(project) {
+                return `
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden transform hover:scale-[1.03] transition-all duration-500 group border-t border-r border-gray-100 dark:border-gray-700/50">
+                        <div class="h-48 overflow-hidden">
+                            <img
+                                src="${project.thumbnailPlaceholder}"
+                                alt="${project.title} Preview"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-90"
+                                loading="lazy"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x300/e0f2f7/065f46?text=${encodeURIComponent(project.title)}'"
+                            />
+                        </div>
+
+                        <div class="p-6">
+                            <p class="text-sm font-bold uppercase text-${primaryColor}-600 dark:text-${primaryColor}-400 mb-2">
+                                ${project.category}
+                            </p>
+                            <h3 class="text-xl font-extrabold text-gray-900 dark:text-white mb-3">
+                                ${project.title}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2 mb-4">
+                                ${project.description}
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${project.tools.map(tool => `
+                                    <span class="text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full shadow-sm">
+                                        ${tool}
+                                    </span>
+                                `).join('')}
+                            </div>
+
+                            <a
+                                href="${behanceUrl}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex items-center text-${primaryColor}-600 dark:text-${primaryColor}-400 font-bold text-sm hover:underline hover:text-${primaryColor}-700 transition-colors"
+                            >
+                                Click to view my work on Behance ${this.getIconHtml('ChevronRight', 'w-4 h-4 ml-1')}
+                            </a>
+                        </div>
+                    </div>
+                `;
+            },
+
+            renderPortfolioPage() {
+                const { projects } = SITE_CONFIG;
+
+                return `
+                    <div id="portfolio" class="py-16 md:py-24 max-w-7xl mx-auto px-4">
+                        <header class="text-center mb-16">
+                            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
+                                Selected Works
+                            </h2>
+                            <p class="text-xl font-light text-${primaryColor}-600 dark:text-${primaryColor}-400">
+                                A showcase of my high-impact projects.
+                            </p>
+                        </header>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                            ${projects.map(project => this.renderProjectCard(project)).join('')}
+                        </div>
+
+                        <div class="mt-16 text-center">
+                            <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                                Explore my complete collection of projects and case studies on Behance.
+                            </p>
+                            <a
+                                href="${behanceUrl}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                ${this.renderButton('See All on Behance', '', 'secondary', 'Aperture', 'font-semibold')}
+                            </a>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            // Contact form state
+            contactFormState: {
+                status: 'idle', // idle, loading, success, error
+                message: '',
+            },
+
+            renderContactPage() {
+                const { email, socials } = SITE_CONFIG;
+                const { status, message } = this.contactFormState;
+                
+                let buttonContent = 'Send Brief';
+                let messageHtml = '';
+
+                if (status === 'loading') {
+                    buttonContent = `<div class="flex items-center justify-center"> ${this.getIconHtml('Zap', 'w-5 h-5 mr-3 animate-pulse')} Submitting...</div>`;
+                }
+                
+                if (message) {
+                    const statusClass = status === 'success' ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300';
+                    messageHtml = `<div class="p-4 rounded-xl text-center font-medium ${statusClass}">${message}</div>`;
+                }
+
+                return `
+                    <div id="contact" class="py-16 md:py-24 max-w-4xl mx-auto px-4">
+                        <header class="text-center mb-16">
+                            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
+                                Let's Start a Project
+                            </h2>
+                            <p class="text-xl font-light text-${primaryColor}-600 dark:text-${primaryColor}-400">
+                                I'm currently accepting new projects.
+                            </p>
+                        </header>
+
+                        <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-10 border border-gray-100 dark:border-gray-700">
+                            <form id="contact-form" class="space-y-6">
+                                <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-4 focus:ring-${primaryColor}-200 focus:border-${primaryColor}-500 transition-all"/>
+                                <input type="email" name="email" placeholder="Your Email Address" required class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-4 focus:ring-${primaryColor}-200 focus:border-${primaryColor}-500 transition-all"/>
+                                <textarea name="message" rows="5" placeholder="Your Project Brief or Message" required class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-4 focus:ring-${primaryColor}-200 focus:border-${primaryColor}-500 transition-all"></textarea>
+
+                                <button type="submit" class="w-full text-lg px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg bg-${primaryColor}-600 text-white hover:bg-${primaryColor}-700 dark:bg-${primaryColor}-500 dark:hover:bg-${primaryColor}-600 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-${primaryColor}-500/50" ${status === 'loading' ? 'disabled' : ''}>
+                                    ${buttonContent}
+                                </button>
+                                ${messageHtml}
+                            </form>
+
+                            <div class="md:border-l md:border-gray-200 dark:border-gray-700 md:pl-10 space-y-10 flex flex-col justify-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center">
+                                        ${this.getIconHtml('Mail', 'w-6 h-6 mr-3 text-${primaryColor}-600')}
+                                        Direct Contact
+                                    </h3>
+                                    <a href="mailto:${email}" class="text-lg text-gray-600 dark:text-gray-300 hover:text-${primaryColor}-500 transition-colors block break-words">
+                                        ${email}
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+                                        Find Me Online
+                                    </h3>
+                                    <div class="flex space-x-6">
+                                        ${socials.map(link => this.renderSocialIcon(link)).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            // Contact Form Handler
+            handleContactSubmit: async (e) => {
+                e.preventDefault();
+                
+                const form = e.target;
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                const submitButton = form.querySelector('button[type="submit"]');
+
+                // Set loading state
+                APP.contactFormState.status = 'loading';
+                submitButton.disabled = true;
+                submitButton.innerHTML = `<div class="flex items-center justify-center">${APP.getIconHtml('Zap', 'w-5 h-5 mr-3 animate-pulse')} Submitting...</div>`;
+
+                // Simulate API call and success (Replace with actual backend logic if needed)
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 1500)); 
+                    
+                    APP.contactFormState.status = 'success';
+                    APP.contactFormState.message = "Thank you for your message! I will get back to you soon.";
+                    form.reset(); 
+
+                } catch (error) {
+                    console.error("Form submission error:", error);
+                    APP.contactFormState.status = 'error';
+                    APP.contactFormState.message = 'An error occurred. Please try again or email me directly.';
+                }
+
+                // Restore button state
+                submitButton.disabled = false;
+                APP.renderPage('contact'); // Re-render the contact page to show the status message
+            },
+
+            // Scroll to Top Logic
+            setupScrollToTop() {
+                const mainContent = document.getElementById('main-content');
+                const scrollButton = document.getElementById('scroll-to-top');
+                
+                const checkScrollTop = () => {
+                    if (mainContent.scrollTop > 400) {
+                        scrollButton.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                        scrollButton.classList.add('opacity-100', 'translate-y-0');
+                    } else {
+                        scrollButton.classList.remove('opacity-100', 'translate-y-0');
+                        scrollButton.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    }
+                };
+                
+                mainContent.addEventListener('scroll', checkScrollTop);
+                window.scrollTop = () => mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+            },
+
+            // Footer Update
+            updateFooterYear() {
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            }
+        };
+
+        // Initialize the app when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            APP.init();
+        });
+    </script>
+</body>
+</html>
